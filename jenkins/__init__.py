@@ -137,7 +137,7 @@ def auth_headers(username, password):
     '''
     Simple implementation of HTTP Basic Authentication. Returns the 'Authentication' header value.
     '''
-    return 'Basic ' + base64.encodestring('%s:%s' % (username, password))[:-1]
+    return 'Basic ' + base64.encodestring('%s:%s' % (username, password)).replace('\n', '')
 
 class Jenkins(object):
 
